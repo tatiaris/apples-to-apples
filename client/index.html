@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Cards Against Humanity</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="https://kit.fontawesome.com/c972f6d301.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./client/css/master.css">
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="panel">
+                <div class="player-name-container">
+                    Czar: <span id="judge-player-name"></span>
+                </div>
+                <div id="judge-cards" class="cards-container flex-center">
+                    <button id="prompt-card" class="card prompt-card" type="button" name="button"></button>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button id="submit-winning-card" type="button" name="button" disabled>Submit</button>
+            </div>
+            <div class="panel">
+                <div class="player-name-container">
+                    <span id="self-player-name"></span>
+                    <button id="edit-name-btn"><i class="fas fa-edit"></i></button>
+                </div>
+                <div id="my-cards" class="cards-container flex-center">
+                </div>
+            </div>
+            <div id="my-btns" class="btn-container">
+                <button id="submit-card" type="button" name="button">Submit</button>
+            </div>
+            <div class="flex-center bottom-container">
+                <div class="third-container">
+                    <div class="container-name flex-center">Game Log</div>
+                    <div id="log-container"></div>
+                </div>
+                <div class="third-container">
+                    <div class="container-name flex-center">Leaderboard</div>
+                    <div id="leaderboard-container"></div>
+                </div>
+                <div class="third-container">
+                    <div class="container-name flex-center">Create Cards</div>
+                    <div class="instructions-container">
+                        Note: Please use 3 underscores ( ___ ) for a blank in a prompt or the prompt shall not be accepted.
+                    </div>
+                    <div class="new-stuff-container flex-center">
+                        <form action="javascript:add_new_answer()" method="post">
+                            <input id="new-answer" type="text" placeholder="enter answer...">
+                            <button id="add-answer" type="submit" name="button">ADD</button>
+                        </form>
+                    </div>
+                    <div class="new-stuff-container flex-center">
+                        <form action="javascript:add_new_prompt()" method="post">
+                            <input id="new-prompt" type="text" placeholder="enter prompt...">
+                            <button id="add-prompt" type="submit" name="button">ADD</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./client/js/main.js"></script>
+    </body>
+</html>
